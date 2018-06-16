@@ -1,0 +1,107 @@
+#include <iostream>
+#include <ctime>
+#include <stdio.h>
+#include <stdlib.h>
+#include <cstdlib>
+#include <cctype>
+#include <time.h>
+#include <windows.h>
+#include <string.h>
+#include <math.h>
+#include <time.h>
+#include <physic.h>
+#include <other.h>
+#include <physic engine.h>
+#include <game engine.h>
+#Include <audio.h and video.h>
+#ifndef FALSE
+#define FALSE        0
+#endif
+ 
+#ifndef TRUE
+#define TRUE         ! FALSE
+#endif
+
+/* Standard Line Length */
+ 
+#define MAXLEN     255
+ 
+/* Standard Terminal Sizes */
+ 
+#define MAXROW      24
+#define MAXCOL      80
+ 
+/* Standard Page Size */
+ 
+#define MAXLINES    66
+ 
+/* Useful typedefs */
+ 
+typedef int bool;
+typedef char line[MAXCOL];
+typedef char string[MAXLEN];
+----------------------------------
+using namespace std;
+
+ int exp per lelvel
+ int bonus exp per level);
+class (struct enemyships)  //The enemyships
+{
+ int power;  //Enemy power
+ int sp;  //Enemy ships points
+ int sif;  //Enemy structural integrity field (sif)
+
+ char name[30];
+};
+--------------------------
+class (struct player)  //The player
+{
+ char name[30];
+	int power;  //power
+	int sif;  //structural integrity field (sif)
+	int sp;  //ship points
+	int exp;  //exp
+ int weapon;  //weapons
+ int armour;  //armour
+ int shield;  //shield
+
+};
+-------------------
+struct Technology //The Technology
+{
+ char name[30];  //Name
+ char type[18];  //The Type
+ int bonus;  //The Bonus
+};
+------------------------------------
+class upgrads(Technolog);
+
+{
+char name[30]; (struct Technology );//The Technology
+{ //Name
+ char type[18]; (struct Technology );//The Technology
+{ //The Type
+ }
+ int bonus; (struct Technology );//The Technology
+ ---------------------------------
+class (struct space);
+{
+	char description[500];  //The description
+ char name[30];  //Name
+ int forward;  //forward
+ int backward;  //backward
+ int starboard; //right
+ int port;  //left
+};
+-------------------------------------
+void initializespace();  //To Initialize space
+void initializeBattle();  //To Initialize Battle
+void initializeTechnology();  //To Initialize Technology
+void initializePlayer();  //To Initialize Player
+void initializeEnemyships();  //To Initialize Enemyship
+void giveItem();  //To give item
+int randomNumber(int);  //random numer
+ space spaceArray[17];  //Space Array
+ Technology TechnologyArray[17];  //Technology Array
+ player charactership;  //Charactership
+ enemyships enemyshipsArray[17];  //Enemyships Array
