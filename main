@@ -1,0 +1,579 @@
+int main()
+{
+ initializeEnemyships();
+ initializeTechnology();
+ initializePlayer();
+ initializespace();
+	char move;
+	int currentspace = 0;
+ cout << "You emerge in the " <<spaceArray[currentspace].name;  //You Emerge in spaceArray 
+ cout << spaceArray[currentspace].description;  //Description of spaceArray
+	while (charactership.sp > 0)
+ {
+	if (spaceArray[currentspace].forward != -1)  //To spaceArray to move forward 
+	{
+	   cout << "You may move forward.\n";
+	}
+	if (spaceArray[currentspace].backward != -1)  //To spaceArray to move backward
+	{
+	   cout << "You may move backward.\n";
+	}
+	if (spaceArray[currentspace].starboard != -1)  //To spaceArray to move starboard
+	{
+	   cout << "You may move to starboard.\n";
+	}
+	if (spaceArray[currentspace].port != -1)  //To spaceArray to move port
+	{
+	   cout << "You may move to port.\n";
+	}
+	cout << "please enter your move: " << endl;
+	cin >> move;
+	move = toupper(move);
+	if (move == 'S')
+ currentspace = spaceArray[currentspace].starboard;
+	if (move == 'P')
+	   currentspace = spaceArray[currentspace].port;
+	if (move == 'F')
+	   currentspace = spaceArray[currentspace].forward;
+	if (move == 'B')
+	   currentspace = spaceArray[currentspace].backward;
+   if (move == 'C')
+	   cout << "You have " << charactership.sp << " SP." << endl;  //Player have Ship Points
+	   cout << "You have " << charactership.power << " Power." << endl;  //Player have Power
+	   cout << "You have " << charactership.sif << " SIF." << endl;  //Player have structural integrity field (sif)
+	if (move != 'S' && move != 'P' && move != 'B' && move!= 'F')
+	cout << "Please enter either 'F', 'S', 'B' or 'P'! " << endl;  //Player Keys to move 
+	cout << "You emerge in the " << spaceArray[currentspace].name << endl;
+	cout << spaceArray[currentspace].description << endl;
+	initializeBattle();
+giveItem();
+	}
+ system("CLS");  //Clear the screen
+	cout << "Replied From Fleet Admiral Stephen\n"
+	     << "You are lucky that you got in a escape pod befor your ship was blow up\n"
+         << "You have failed to beat The Divine Order Imperial StarShips. You have also\n"
+		 << "failed to save the Milky Way Galaxy from the Divine Order.\n"
+         << "What where you thinking going\n"
+		 << "into Space Battle Wars PRG so weak (*hint make ship stats higher*)!\n"
+         << "so now you are in the escape pod and drifting for months before landing on a habited planet.\n"
+         << "Mission Over. (Game Over)" << endl;  //From 5 star Admiral Stephen 
+ system("PAUSE");  //Pause
+ system("CLS");  //Clear the screen
+  
+  char username[30];
+  
+    cout  
+         << "Replied from Captain:\n" << username << "Um...Yeah, I guess, unless\n"
+         << "the programmer doesn't feel lazy and\n"
+         << "adds more to the game.\n," << endl;  //Replied from the Player 
+
+ system("PAUSE");  //Pause
+ system("CLS");  //Clear the screen
+    
+    cout <<"     \Fat chance of that happening, I hardly had the energy to make\n"
+    << "the game the way it is now, screw adding more.\n"" came a voice from\n"
+    << "out of nowhere...\n\n"
+    << "Also Live long and prosper"<< endl;  //Voice from the programmer in typeing
+    system("PAUSE");  //Pause     	 
+ system("CLS");  //Clear the screen
+ 
+  cout <<"Try Agen because ther is no End to the game but for Game Over.\n"<< endl; //Try Agen from the programmer in typeing
+        
+   system("PAUSE");  //Pause     
+         
+	return 0;
+}
+void initializeEnemyships()
+	{
+ /*Enemy Ships List*/                   
+ strcpy(enemyshipsArray[0].name, "The Lexx");  //Name of Enemyship 
+   enemyshipsArray[0].sp = 60;  //Enemyship Ship Points                         
+   enemyshipsArray[0].power = 80;  //Enemyship Power
+   enemyshipsArray[0].sif = 20;  //Enemyship structural integrity field (sif)
+
+ strcpy(enemyshipsArray[1].name, "The Billisther");  //Name of Enemyship
+   enemyshipsArray[1].sp = 60;  //Enemyship Ship Points 
+   enemyshipsArray[1].power = 20;  //Enemyship Power
+   enemyshipsArray[1].sif = 80;  //Enemyship structural integrity field (sif)
+ strcpy(enemyshipsArray[2].name, "Balance of Judgment");  //Name of Enemyship
+   enemyshipsArray[2].sp = 60;  //Enemyship Ship Points 
+   enemyshipsArray[2].power = 40;  //Enemyship Power
+   enemyshipsArray[2].sif = 60;  //Enemyship structural integrity field (sif) 
+ strcpy(enemyshipsArray[3].name, "Imperial Destroyer");  //Name of Enemyship
+   enemyshipsArray[3].sp = 40;  //Enemyship Ship Points 
+   enemyshipsArray[3].power = 60;  //Enemyship Power
+   enemyshipsArray[3].sif = 60;  //Enemyship structural integrity field (sif) 
+ strcpy(enemyshipsArray[4].name, "Battlecruiser");  //Name of Enemyship
+   enemyshipsArray[4].sp = 60;  //Enemyship Ship Points 
+   enemyshipsArray[4].power = 60;  //Enemyship Power
+   enemyshipsArray[4].sif= 60;  //Enemyship structural integrity field (sif)
+ strcpy(enemyshipsArray[5].name, "Shivan Sathanas juggernaught");  //Name of Enemyship
+   enemyshipsArray[5].sp = 20;  //Enemyship Ship Points 
+   enemyshipsArray[5].power = 70;  //Enemyship Power
+   enemyshipsArray[5].sif= 50;  //Enemyship structural integrity field (sif)   
+   
+ strcpy(enemyshipsArray[6].name, "Foreshadow");  //Name of Enemyship
+   enemyshipsArray[6].sp = 60;  ////Enemyship Ship Points   
+   enemyshipsArray[6].power = 60;  //Enemyship Power
+   enemyshipsArray[6].sif= 60;  //Enemyship structural integrity field (sif)
+ strcpy(enemyshipsArray[7].name, "Andromeda");  //Name of Enemyship
+   enemyshipsArray[7].sp = 30;  //Enemyship Ship Points 
+   enemyshipsArray[7].power = 40;  //Enemyship Power
+   enemyshipsArray[7].sif= 50;  //Enemyship structural integrity field (sif)   
+ strcpy(enemyshipsArray[8].name, "Destroyer");  //Name of Enemyship 
+   enemyshipsArray[8].sp = 70;  //Enemyship Ship Points 
+   enemyshipsArray[8].power = 70;  //Enemyship Power
+   enemyshipsArray[8].sif= 70;  //Enemyship structural integrity field (sif) 
+ strcpy(enemyshipsArray[9].name, "Interceptor");  //Name of Enemyship
+   enemyshipsArray[9].sp = 80;  //Enemyship Ship Points 
+   enemyshipsArray[9].power = 80;  //Enemyship Power
+   enemyshipsArray[9].sif= 80;  //Enemyship structural integrity field (sif)     
+ strcpy(enemyshipsArray[10].name, "Prometheus");  //Name of Enemyship
+   enemyshipsArray[10].sp = 75;  //Enemyship Power
+   enemyshipsArray[10].power = 75;  //Enemyship Power
+   enemyshipsArray[10].sif= 75;  //Enemyship structural integrity field (sif)
+
+ strcpy(enemyshipsArray[11].name, "Drekon Obliterator");  //Name of Enemyship
+   enemyshipsArray[11].sp = 90;  //Enemyship Power
+   enemyshipsArray[11].power = 70;  //Enemyship Power
+   enemyshipsArray[11].sif = 80;  //Enemyship structural integrity field (sif)
+ strcpy(enemyshipsArray[12].name, "Mega Shadow");  //Name of Enemyship  
+   enemyshipsArray[12].sp = 100;  //Enemyship Ship Points 
+   enemyshipsArray[12].power = 80;  //Enemyship Power
+   enemyshipsArray[12].sif = 70;  //Enemyship structural integrity field (sif)
+ strcpy(enemyshipsArray[13].name, "Shadow Warbird");  //Name of Enemyship
+   enemyshipsArray[13].sp = 40;  //Enemyship Ship Points 
+   enemyshipsArray[13].power = 30;  //Enemyship Power
+   enemyshipsArray[13].sif= 30;  //Enemyship structural integrity field (sif)
+ strcpy(enemyshipsArray[14].name, "Sovereign");  //Name of Enemyship
+   enemyshipsArray[14].sp = 50;  //Enemyship Ship Points 
+   enemyshipsArray[14].power = 10;  //Enemyship Power
+   enemyshipsArray[14].sif= 50;  //Enemyship structural integrity field (sif) 
+ strcpy(enemyshipsArray[15].name, "Marduk flagship");  //Name of Enemyship
+   enemyshipsArray[15].sp = 100;  //Enemyship Ship Points 
+   enemyshipsArray[15].power = 100;  //Enemyship Power
+   enemyshipsArray[15].sif= 100;  //Enemyship structural integrity field (sif)
+ strcpy(enemyshipsArray[16].name, "The Super Dimension Fortress");  //Name of Enemyship 
+  enemyshipsArray[16].sp =100;  //Enemyship Ship Points 
+  enemyshipsArray[16].power = 100;  //Enemyship Power
+  enemyshipsArray[16].sif= 100;  //Enemyship structural integrity field (sif)  
+ strcpy(enemyshipsArray[17].name, "Battlestar Galactica");  //Name of Enemyship
+  enemyshipsArray[17].sp =100;  //Enemyship Ship Points 
+  enemyshipsArray[17].power = 100;  //Enemyship Power
+  enemyshipsArray[17].sif= 100;  //Enemyship structural integrity field (sif)  
+ 
+ /*strcpy(enemyshipsArray[0].name, ""); 
+   enemyshipsArray[].sp = ;
+   enemyshipsArray[].power = ;
+   enemyshipsArray[].sif= ;   */ 
+}
+void initializePlayer()
+{
+ char username[30];
+ char usershipname[30];
+	//Start Game 
+	char move;
+	int currentspace = 0;
+	//Game Title and Game Credits
+ cout<<endl<<"\tWelcome to Space Battle Wars RPG"<<endl
+     <<"----------------------------------------------------"<<endl
+          <<"*\t\t By: apocalypsecoder0                   *"<<endl            
+         <<"*\a\t\tapocalypsecoder0: Producer             *"<<endl          
+         <<"*\a\t\tapocalypsecoder0: Game Designer        *"<<endl       
+         <<"*\a\t\tapocalypsecoder0: GamePlay Programmer  *"<<endl
+         <<"*\a\t\tapocalypsecodet0: Game Tester          *"<<endl        
+         <<"*\a\t\apocalypsecoder0 : Writer/Game Text     *"<<endl   
+     <<"----------------------------------------------------"<<endl
+         <<"Any Bug's you see to Bad for you. :)"<<endl
+         <<"------------------------------------"<<endl;
+system("PAUSE");  //Pause
+system("CLS");     //Clear the screen	
+
+ cout << "What is your Captain Name? " "First Name Only!\n" << endl;
+ cin >> username; 
+    cout << "_____________________________________________________ \n" << endl;
+ cout << "What is your Starship Name?\n "<< endl;
+ cin >> usershipname;
+	cout << "______________________________________________________ \n" << endl;
+ 
+   strcpy(charactership.name, usershipname);
+  charactership.sp = 200;  //charscter ship. sp (ship ponts)
+   charactership.armour=0;  //charscter ship. armour
+    charactership.shield=0;  //charscter ship. shield
+     charactership.weapon=0;  //charscter ship. weapon
+ cout << endl << username << " Please insert your power. This will determine the ammount of damage you will inflict.\n"
+      <<"60-80 is a good ammount."
+      << "However you may make this number high as you would like!\n" <<endl;
+	cin >> charactership.power;
+	cout << "______________________________________________________ \n" << endl;
+ cout << endl << username << " Please insert your structural integrity field (sif).\n"
+         <<" This will determine the ammount of damage that you will have inflicted upon you.\n"
+         <<" The more structural integrity field (sif), the less total damage.\n"
+         <<" 60 - 80 is a good ammount. Once again you can make this high as you like! \n" << endl;
+	cin >> charactership.sif;
+	cout << "______________________________________________________ \n" << endl;
+//Game Story and Game Help 
+ cout <<"Captain " << username << " You have just been promoted to Captain and been gaving a starship to command the\n"<< usershipname 
+ << "The starship " << usershipname << " is a New Class of Battleships know as the Aurora Class" 
+ << "The Story begins in the year 2381 about 60 years after Earth First Contact with The Divine Order.\n"
+ << "The Divine Order are Earth enemy your mission is to destroy the Divine Order Imperial Feet.\n"
+ << "It will not be easy because you have to go to Sector by Sector and throught the Divine Order Imperial Feet of ships to save The Milky Way Galaxy from being Conquer.\n"
+ << "You will be able to use new Technology that you will received by us it you like.\n"
+ << "Also you must make your way from sector to sector.\n"
+ << "The war with the Divine Order will soon be over after you have destroy the Divine Order star ships.\n"
+ << "This might be your last Mission and Command Captain" << username
+ << "dum-dum DA DA DA DA DA DA dum-dum DA da...\n"
+ << "/////////////////////////////////////////////////////////////////////////n"
+ << "Captain " << username << "Who am I you ask?\n"
+ << "I am Fleet Admiral Stephen of Earth's Terran Empire Imperial Starfleet.\n"
+ << "I am hear to help you on your Mission.\n"
+ << "At any time (except during battle) you may press '@' to display your stats!\n"
+ << "Simply use 'S','P','F' or 'B' keys to navigate around space, where and as appropriate.\n"
+ << "Keys are F for Forward, B for Backward, P for Port aka Lifet and S for Starboard aka Right.\n"
+ << "Good Luck Captain " << username << endl;
+ cout << "===================================================================== \n" << endl;
+ system("PAUSE");  //Pause
+ printf("\a");     // Ring the bell.
+ system("CLS");  //Clear the screen
+}
+void initializeTechnology()
+{
+  /*Technology List*/  
+ strcpy(TechnologyArray[0].type, "weapon\n");  //Technology Type
+  strcpy(TechnologyArray[0].name, "Photon Torpedoes");  //Technology Name
+   TechnologyArray[0].bonus = 20;  //Technology Bonus  
+ strcpy(TechnologyArray[1].type, "Weapon\n");  //Technology
+  strcpy(TechnologyArray[1].name, " Ion Cannons");  //Technology Name
+   TechnologyArray[1].bonus = 30;  //Technology Bonus
+ strcpy(TechnologyArray[2].type, "Weapon");  //Technology Type
+  strcpy(TechnologyArray[2].name, " Forward Disruptors");  //Technology Name
+   TechnologyArray[2].bonus = 40;  //Technology Bonus
+ strcpy(TechnologyArray[3].type, "Shield");  //Technology Type
+  strcpy(TechnologyArray[3].name, " Borg Shields");  //Technology Name
+   TechnologyArray[3].bonus = 20;  //Technology Bonus
+ strcpy(TechnologyArray[4].type, "Shield");  //Technology Type
+  strcpy(TechnologyArray[4].name, " Ori sheilds");  //Technology Name
+   TechnologyArray[4].bonus = 30;  //Technology Bonus
+ strcpy(TechnologyArray[5].type, "Shield");  //Technology Type
+  strcpy(TechnologyArray[5].name, " Cloaking");  //Technology Name
+   TechnologyArray[5].bonus = 40;  //Technology  Bonus
+
+ strcpy(TechnologyArray[6].type, "Armour");  //Technology Type
+  strcpy(TechnologyArray[6].name, " Ablative Armour Type 1");  //Technology Name
+   TechnologyArray[6].bonus = 10;  //Technology Bonus
+ strcpy(TechnologyArray[7].type, "Armour");  //Technology Type
+  strcpy(TechnologyArray[7].name, " Ablative Armour Type 2");  //Technology Name
+   TechnologyArray[7].bonus = 20;  //Technology Bonus
+ strcpy(TechnologyArray[8].type, "Weapon");  //Technology Type 
+  strcpy(TechnologyArray[8].name, " Drone Weapon");  //Technology Name
+   TechnologyArray[8].bonus = 20;  //Technology Bonus   
+ strcpy(TechnologyArray[9].type, "Weapon");  //Technology Type
+  strcpy(TechnologyArray[9].name, " Chroniton Torpedoes");  //Technology Name
+   TechnologyArray[9].bonus = 40;  //Technology Bonus
+ strcpy(TechnologyArray[10].type, "Weapon");  //Technology Type
+  strcpy(TechnologyArray[10].name, " Tricobalt Device");  //Technology Name
+   TechnologyArray[10].bonus = 50;  //Technology Bonus
+
+ strcpy(TechnologyArray[11].type, "Weapon");  //Technology Type
+  strcpy(TechnologyArray[11].name, " Isolytic burst");  //Technology Name
+   TechnologyArray[11].bonus = 40;  //Technology Bonus
+ strcpy(TechnologyArray[12].type, " Shield");  //Technology Type
+  strcpy(TechnologyArray[12].name, " Pinpoint Barrier");  //Technology Name  
+   TechnologyArray[12].bonus = 10;  //Technology Bonus
+ strcpy(TechnologyArray[13].type, "Shield");  //Technology Type
+  strcpy(TechnologyArray[13].name, " Point Defense Lasers");  //Technology Name
+   TechnologyArray[13].bonus = 20;  //Technology Bonus
+ strcpy(TechnologyArray[14].type, "Shield");  //Technology Type
+  strcpy(TechnologyArray[14].name, " Omni-Directional Barrier");  //Technology Name
+   TechnologyArray[14].bonus = 40;  //Technology Bonus
+ strcpy(TechnologyArray[15].type, "Weapon");  //Technology Type
+  strcpy(TechnologyArray[15].name, " Particle Weapon");  //Technology Name
+   TechnologyArray[15].bonus = 20;  //Technology Bonus
+
+ strcpy(TechnologyArray[16].type, "Weapon");  //Technology Type
+  strcpy(TechnologyArray[16].name, " Proton Beam");  //Technology Name
+   TechnologyArray[16].bonus =15;  //Technology Bonus
+ strcpy(TechnologyArray[17].type, "Weapon");  //Technology Type
+  strcpy(TechnologyArray[17].name, " Transphasic Torpedo");  //Technology Name
+   TechnologyArray[17].bonus =50;  //Technology Bonue
+   
+/* strcpy(TechnologyArray[].type, "Weapon");
+  strcpy(TechnologyArray[].name, " ");
+   TechnologyArray[].bonus = ;   
+strcpy(TechnologyArray[].type, "Shield");
+  strcpy(TechnologyArray[].name, " ");
+   TechnologyArray[].bonus = 25;
+ strcpy(TechnologyArray[].type, "Armour");
+  strcpy(TechnologyArray[].name, " ");
+   TechnologyArray[].bonus = ;      */
+}
+void initializespace()
+{
+     /*Space Sector Generator*/
+ strcpy(spaceArray[0].description, "This space is extravagant your ship Scanners detected a Anomaly in the sector.\n");
+  strcpy(spaceArray[0].name, "Sector 31\n");
+	spaceArray[0].forward = -1;
+	spaceArray[0].backward = -1;
+	spaceArray[0].starboard = 1;
+	spaceArray[0].port = -1;
+ strcpy(spaceArray[1].description, "You emerge in a part of sector 42 that has a single star in the middle.\n"
+    " There are some Planets, suspace distortions, and gravimetric shears in theis part of space.\n");
+  strcpy(spaceArray[1].name, "Sector 42\n");
+	spaceArray[1].forward = -1;
+	spaceArray[1].backward = -1;
+	spaceArray[1].starboard = 2;
+	spaceArray[1].port = 0;
+ strcpy(spaceArray[2].description, "You have enter a region know as the Briar Patch.\n" 
+    "It is containing dangerous space matter including the remains of supernovae, false vacuum fluctuations, metaphasic radiation. Some sort of a heavenly radiance hit your ship. Upon impact you feel revitalised so as your crew and so your SP is restored to its maximum level.\n");
+  strcpy(spaceArray[2].name, "Briar Patch\n");
+	spaceArray[2].forward = 3;
+	spaceArray[2].backward = 4;
+	spaceArray[2].starboard = 6;
+	spaceArray[2].port = 1;
+ strcpy(spaceArray[3].description, "Upon entering onto this Expanse, your ship is exposed to Theta radiation from a ship that has been damaged by one of the Divine order ship after the attack on the warship Phoenix it has been emitting theta radiation and it crew needs help.\n");
+  strcpy(spaceArray[3].name, "Delphic Expanse\n");
+	spaceArray[3].forward = -1;
+	spaceArray[3].backward = 2;
+	spaceArray[3].starboard = 5;
+	spaceArray[3].port = -1;
+	strcpy(spaceArray[4].description, "You enter a Sector that has a bright Sun and has 7 Planets around it and space station Terok Nor full of latinum in the orbit of the 6 Planet Yadera Prime.\n" 
+    "There are people on the space station too.\n");
+ strcpy(spaceArray[4].name, "Sector 97\n");
+	spaceArray[4].forward = 2;
+	spaceArray[4].backward = -1;
+	spaceArray[4].starboard = 7;
+	spaceArray[4].port = -1;
+ strcpy(spaceArray[5].description, "Another sector of space that has Crystals that are on the unnamed asteroid belt.\n" 
+ "That are being mine from it. \n");
+ strcpy(spaceArray[5].name, "Sector 213\n");
+	spaceArray[5].forward = -1;
+	spaceArray[5].backward = 6;
+	spaceArray[5].starboard = 8;
+	spaceArray[5].port = 3;
+ strcpy(spaceArray[6].description, "The Nekrit Expanse is a huge, sparsely populated, nebular region containing an unknown form of interstellar gas.\n"
+ "It is several thousand light years across and is impossible to chart due to its constantly changing structure. \n");
+  strcpy(spaceArray[6].name, "Nekrit Expanse\n");
+	spaceArray[6].forward = 5;
+	spaceArray[6].backward = 7;
+	spaceArray[6].starboard = 2;
+	spaceArray[6].port = 9;
+ strcpy(spaceArray[7].description, "The Argus sector you have enter. The sector has a nebula an interstellar cloud of matter, usually gases (such as hydrogen) and dust.\n");
+  strcpy(spaceArray[7].name, "Argus Sector\n");
+	spaceArray[7].forward = 6;
+	spaceArray[7].backward = -1;
+	spaceArray[7].starboard = -1;
+	spaceArray[7].port = 4;
+ strcpy(spaceArray[8].description, "The Kepla sector has one blue class O supergiants stars and a few Planets.\n");
+  strcpy(spaceArray[8].name, "Kepla Sector\n");
+    spaceArray[8].forward = -1;
+	spaceArray[8].backward = 9;
+	spaceArray[8].starboard = -1;
+	spaceArray[8].port = 5;
+ strcpy(spaceArray[9].description, "The sector has a Small wormhole. The wormhole is to small for are ship to go in it.\n");
+  strcpy(spaceArray[9].name, "Sector 394\n");
+	spaceArray[9].forward = 8;
+	spaceArray[9].backward = -1;
+	spaceArray[9].starboard = 10;
+	spaceArray[9].port = 6;
+ strcpy(spaceArray[10].description, "The Badlands, located in Sector 70, was a region of space along the border between The Terran Empire and the Drekon Hegimony, that are known for intense plasma storms and gravitational anomalies. For that reason, it was commonly avoided by most interstellar traffic.");
+  strcpy(spaceArray[10].name, "Badlands");
+   spaceArray[10].forward = 9;
+   spaceArray[10].backward = -2;
+   spaceArray[10].starboard = 9;
+   spaceArray[10].port =7;
+   
+ strcpy(spaceArray[11].description, "The Drekon Hegimony are a humanoid warrior species that originated from the planet Kronos. One of the major powers of the galaxy, the Drekon Hegimony are a proud, tradition-bound people who valued honor and combat.\n"
+  "The aggressive Drekon Hegimony culture had made them an interstellar military power to be respected and feared.");
+  strcpy(spaceArray[11].name, "Drekon Sector");
+   spaceArray[11].forward = 10;
+   spaceArray[11].backward = -3;
+   spaceArray[11].starboard = 8;
+   spaceArray[11].port = 8;
+ strcpy(spaceArray[12].description, "The time is now. You have detected His Divine Shadow ship the Mega Shadow in the Orion sector above the Planet Dakara.\n");
+	strcpy(spaceArray[12].name, "Orion sector\n"); 
+ strcpy(spaceArray[13].description, "The Typhon Expanse is a region of space with unusual temporal properties.\n");
+  strcpy(spaceArray[13].name, "Typhon Expanse\n");
+   spaceArray[13].forward =10; 
+   spaceArray[13].backward = -4;
+   spaceArray[13].starboard =9;
+   spaceArray[13].port = 9;
+ strcpy(spaceArray[14].description, "Murasaki 312 or Murasaki Effect is a quasar-like electromagnetic phenomenon located in or near Terran Empire space. In 2267, it ionized an entire sector, including four solar systems.\n");
+  strcpy(spaceArray[14].name, "Murasaki 312\n");
+	spaceArray[14].forward = 10;
+	spaceArray[14].backward = -5;
+	spaceArray[14].starboard = 10;
+	spaceArray[14].port = 10; 
+ strcpy(spaceArray[15].description, "Dark matter nebulae are accumulations of dark matter, that are difficult to detect on sensors unless illuminated by metreon particles\n");
+  strcpy(spaceArray[15].name, "Dark Matter Nebula\n");
+	spaceArray[15].forward = 10;
+	spaceArray[15].backward = -6;
+	spaceArray[15].starboard = -1;
+	spaceArray[15].port = 9;      
+
+ strcpy(spaceArray[16].description, "A black cluster is a type of cluster that is created when numerous protostars collapsed in close proximity to one another.\n"
+   "The result of this collective collapse was an area of space that absorbs energy and dangerously affects spacecraft systems.\n"
+   "Prior to 2368, the Terran Empire maintained reports from ships traveling through black clusters indicating sensor difficulties.\n");
+  strcpy(spaceArray[16].name, "Black Cluster Sector");
+   spaceArray[16].forward = 11;
+   spaceArray[16].backward = -7;
+   spaceArray[16].starboard = -2;
+   spaceArray[16].port = 8;
+ strcpy(spaceArray[17].description, "Sol (aka The Sun or Helios) is the common name for the star that formed the Sol system, where the planet Earth is located.\n"
+   "The Homeworld of Humanity, and the location of the Terran Empire Imperial Starfleet." 
+   "The Divine Order Imperial Fleet is in orbit of Earth");
+  strcpy(spaceArray[17].name, "Sol System");
+   spaceArray[17].forward = 12;
+   spaceArray[17].backward = -8;
+   spaceArray[17].starboard =-3;
+   spaceArray[17].port = 7;
+
+/* strcpy(spaceArray[].description, " \n");
+  strcpy(spaceArray[].name, " \n");
+	spaceArray[].forward = ;
+	spaceArray[].backward = -;
+	spaceArray[].starboard = ;
+	spaceArray[].port = ;  */	
+}
+void initializeBattle()
+{ 
+     /*Battle Generator*/
+ int attackpower = 0;  //attackpower
+ int defencepower = 0;  //defencepower
+ int enemyshipsattack = 0;  //enemyshipsattack
+ int enemyshipsdefence = 0;  //enemyshipsattack
+ int randomenemyships = 0;  //randomenemyships
+	srand(static_cast<unsigned>(time(0)));
+	randomenemyships = (rand()%16 + 1);
+	cout << "  "<< enemyshipsArray[randomenemyships].name << "Appears. \n" << endl;  //Name of Enemyship that appears
+    cout << enemyshipsArray[randomenemyships].name << "has" << enemyshipsArray[randomenemyships].power << "Power" << endl  //Shows Enemyship Power
+		 << enemyshipsArray[randomenemyships].name << "has" << enemyshipsArray[randomenemyships].sif << "SIF" << endl  //Shows Enemyship SIF
+		 << enemyshipsArray[randomenemyships].name << "has" << enemyshipsArray[randomenemyships].sp << "SP \n" << endl;  //Show Enemyship SP
+	do
+	{
+	  attackpower = (charactership.power + charactership.weapon) * (rand()%10 + 1);
+	  cout << charactership.name << " deals " << attackpower << " damage" << endl;
+	  enemyshipsdefence = (enemyshipsArray[randomenemyships].sif * (rand()%5+1));
+	  cout << enemyshipsArray[randomenemyships].name << " defends " << enemyshipsdefence << "Ship Points" << endl;
+	  if (attackpower > enemyshipsdefence)
+		 {
+			 enemyshipsArray[randomenemyships].sp = enemyshipsArray[randomenemyships].sp - (attackpower - enemyshipsdefence);  
+			 cout << "The enemyship now has " << enemyshipsArray[randomenemyships].sp << "Ship points!" << endl;  
+		 }
+	  else
+		 {
+			 enemyshipsArray[randomenemyships].sp = enemyshipsArray[randomenemyships].sp;
+			 cout << "You have failed to damage the enemy ship!\n" << endl;
+		 }
+	  enemyshipsattack = (enemyshipsArray[randomenemyships].power * (rand()%5+1));
+	  cout << enemyshipsArray[randomenemyships].name << " does " << enemyshipsattack << "Damage!" << endl;
+      defencepower = (charactership.sif + charactership.shield) * (rand()%5 + 1);
+	  cout << charactership.name << " defends " << defencepower << "Ship Points!" << endl;
+	  if (enemyshipsattack > defencepower)
+		 {
+			 charactership.sp = charactership.sp - (enemyshipsattack - defencepower);
+			 cout << "You have been hit! You now have " << charactership.sp << "Ship Points! \n" << endl;
+		 }
+	  else
+		 {
+			 charactership.sp = charactership.sp;
+			 cout << "You have defended the enemy ship attack! \n ...And now have " << charactership.sp << "Ship points! \n" << endl;
+		 }
+	}while (enemyshipsArray[randomenemyships].sp > 0);
+}
+void giveItem()
+{    
+     /*The Technology Randomgenerator*/
+	 int randomgenerator = 0;
+	 srand(static_cast<unsigned>(time(0)));
+	 randomgenerator = (rand()%17 + 1);
+	 char playerchoice;
+	 if (randomgenerator == 0 || randomgenerator == 1 || randomgenerator == 2)
+	 {
+     cout << "Do you want to get the new Technology" << TechnologyArray[randomgenerator].name << " ?" << endl;
+   	 cout << "This will add " << TechnologyArray[randomgenerator].bonus << "to your Power." << endl;
+ 	 cout << "Yes or No." << endl;
+ 	 cin >> playerchoice;
+ 	 playerchoice = toupper(playerchoice);
+     if (playerchoice == 'Y')  //Player hit Y to gat the Technology
+	 	   charactership.weapon = TechnologyArray[randomgenerator].bonus;
+     else
+		   charactership.weapon = charactership.weapon;
+	   }
+	 else if (randomgenerator == 3 || randomgenerator == 4 || randomgenerator == 5)
+	 {
+     cout << "Do you want to get the new Technology" << TechnologyArray[randomgenerator].name << " ?" << endl;
+     cout << "This will add " << TechnologyArray[randomgenerator].bonus << "to your SIF." << endl;
+     cout << "Yes or No." << endl;
+     cin >> playerchoice;
+     playerchoice = toupper(playerchoice);
+  if (playerchoice == 'Y')  //Player hit Y to gat the Technology
+		   charactership.shield = TechnologyArray[randomgenerator].bonus;
+     else
+			charactership.shield = charactership.shield;
+		}
+	 else if (randomgenerator == 6 || randomgenerator == 7 || randomgenerator == 8)
+	 {
+		cout << "Do you want to get the new Technology" << TechnologyArray[randomgenerator].name << " ?" << endl;
+		cout << "This will add " << TechnologyArray[randomgenerator].bonus << "to your SIF." << endl;
+		cout << "Yes or No." << endl;
+		cin >> playerchoice;
+		playerchoice = toupper(playerchoice);
+        if (playerchoice == 'Y')  //Player hit Y to gat the Technology
+		   charactership.armour = TechnologyArray[randomgenerator].bonus;
+		else
+			charactership.armour = charactership.weapon;
+        }		
+	 else if (randomgenerator == 9 || randomgenerator == 10 || randomgenerator == 11)
+	 {
+     cout << "Do you want to get the new Technology" << TechnologyArray[randomgenerator].name << " ?" << endl;
+   	 cout << "This will add " << TechnologyArray[randomgenerator].bonus << "to your Power." << endl;
+ 	 cout << "Yes or No." << endl;
+ 	 cin >> playerchoice;
+ 	 playerchoice = toupper(playerchoice);
+ if (playerchoice == 'Y')  //Player hit Y to gat the Technology
+	 	   charactership.weapon = TechnologyArray[randomgenerator].bonus;
+     else
+		   charactership.weapon = charactership.weapon;	
+      }
+     else if (randomgenerator == 12 || randomgenerator == 13 || randomgenerator == 14)
+     {
+     cout << "Do you want to get the new Technology" << TechnologyArray[randomgenerator].name << " ?" << endl;
+     cout << "This will add " << TechnologyArray[randomgenerator].bonus << "to your Power." << endl;
+     cout << "Yes or No." << endl;
+     cin >> playerchoice;
+  if (playerchoice == 'Y')  //Player hit Y to gat the Technology
+           charactership.shield = TechnologyArray[randomgenerator].bonus;
+     else 
+         charactership.shield = charactership.shield;
+      }  
+     if (randomgenerator == 15 || randomgenerator ==16 || randomgenerator ==17)
+     {
+     cout << "Do you want to get the new Technology" << TechnologyArray[randomgenerator].name << " ?" << endl;
+     cout << "This will add" << TechnologyArray[randomgenerator].bonus << "to your Power." << endl;
+     cout <<"Yes or No." << endl;
+     cin >> playerchoice;
+  if (playerchoice == 'Y')  //Player hit Y to gat the Technology
+           charactership.weapon = TechnologyArray[randomgenerator].bonus;
+     else
+           charactership.weapon = charactership.weapon;
+		}
+}
+
+/*if (randomgenerator ==  || randomgenerator ==  || randomgenerator ==)
+     {
+     cout << "Do you want to get the new Technology" << TechnologyArray[randomgenerator].name << " ?" << endl;
+     cout << "This will add" << TechnologyArray[randomgenerator].bonus << "to your power." << endl;
+     cout <<"Yes or No." << endl;                                       or  to your SIF
+     cin >> playerchoice;
+  if (playerchoice == 'Y')  //Player hit Y to gat the Technology
+           charactership.weapon = TechnologyArray[randomgenerator].bonus;
+                  or
+           charactership.shield
+                  or
+           charactership.armour
+     else
+           charactership.weapon = charactership.weapon;
+                  or                            or
+           charactership.shield           charactership.shield
+                  or                            or
+           charactership.armour           charactership.armour*/
